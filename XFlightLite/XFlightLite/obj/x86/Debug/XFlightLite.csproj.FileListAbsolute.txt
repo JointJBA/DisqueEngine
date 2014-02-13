@@ -1,0 +1,14 @@
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\XFlightLite.exe
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\XFlightLite.pdb
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\Disque.Xna.dll
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\DisqueEngine.dll
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\Disque.Xna.pdb
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\DisqueEngine.pdb
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\obj\x86\Debug\XFlightLite.exe
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\obj\x86\Debug\XFlightLite.pdb
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\Content\terrain.xnb
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\Content\grass9.xnb
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\Disque.Math.dll
+E:\Visual Studio Projects\DisqueEngine\XFlightLite\XFlightLite\bin\x86\Debug\Disque.Math.pdb

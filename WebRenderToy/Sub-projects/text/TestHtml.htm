@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Page</title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+    </script>
+</head>
+<body>
+    <input type="text" id="nm" />
+    <button id="someButton">
+        Submit</button>
+        <p id="result"></p>
+    <script>
+        $('#someButton').click(function () {
+            try {
+                $.get("http://csraytracer.somee.com/Sub-projects/text/textMessage.ashx?ghg=9&hghg=8&hjhj=h&movie=" + nm.value, function (res) {
+                    alert("wtf");
+                });
+            } catch (ex) {
+            }
+        });
+    </script>
+</body>
+</html>

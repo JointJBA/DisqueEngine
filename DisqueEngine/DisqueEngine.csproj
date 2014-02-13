@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB9A329D-E6C2-4076-B371-59419F17CBA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Disque</RootNamespace>
+    <AssemblyName>DisqueEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ForceGenerator.cs" />
+    <Compile Include="Core\IMass.cs" />
+    <Compile Include="Core\IParticleMass.cs" />
+    <Compile Include="Core\IMovable.cs" />
+    <Compile Include="Core\IParticle.cs" />
+    <Compile Include="Core\IRigidbody.cs" />
+    <Compile Include="Core\ParticleForceGenerator.cs" />
+    <Compile Include="Particles\Contacts\GroundContactGenerator.cs" />
+    <Compile Include="Particles\Contacts\ParticleContact.cs" />
+    <Compile Include="Core\IParticleContactGenerator.cs" />
+    <Compile Include="Particles\Contacts\ParticleContactResolver.cs" />
+    <Compile Include="Particles\Contacts\ParticleParticleContactGenerator.cs" />
+    <Compile Include="Particles\Contacts\ParticleWorldContactGenerators.cs" />
+    <Compile Include="Particles\Forces\Buoyancy.cs" />
+    <Compile Include="Particles\Forces\Drag.cs" />
+    <Compile Include="Particles\Forces\Gravity.cs" />
+    <Compile Include="Particles\Links\Cable.cs" />
+    <Compile Include="Particles\Links\CableConstraint.cs" />
+    <Compile Include="Particles\Links\ParticleConstraint.cs" />
+    <Compile Include="Particles\Links\ParticleLink.cs" />
+    <Compile Include="Particles\Links\Rod.cs" />
+    <Compile Include="Particles\Links\RodConstraint.cs" />
+    <Compile Include="Particles\Particle.cs" />
+    <Compile Include="Particles\ParticleWorld.cs" />
+    <Compile Include="Particles\Springs\AnchoredSpring.cs" />
+    <Compile Include="Particles\Springs\Bungee.cs" />
+    <Compile Include="Particles\Springs\FakeSpring.cs" />
+    <Compile Include="Particles\Springs\Spring.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RigidBodies\Contacts\CollisionPrimitive.cs" />
+    <Compile Include="RigidBodies\Forces\Aero.cs" />
+    <Compile Include="RigidBodies\Forces\AeroControl.cs" />
+    <Compile Include="RigidBodies\Forces\Buoyancy.cs" />
+    <Compile Include="RigidBodies\Forces\Gravity.cs" />
+    <Compile Include="RigidBodies\RigidBody.cs" />
+    <Compile Include="RigidBodies\RigidBodyWorld.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Disque.Math\Disque.Math.csproj">
+      <Project>{7D93F949-7FFA-4AFE-AA9E-1CA51EFB403B}</Project>
+      <Name>Disque.Math</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

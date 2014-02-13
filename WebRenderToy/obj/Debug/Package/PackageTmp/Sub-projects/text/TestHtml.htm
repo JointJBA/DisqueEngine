@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Page</title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+        function importXML(xmlfile) {
+            var xmlloaded = false;
+            var xmlDoc;
+            try {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", xmlfile, false);
+            }
+            catch (Exception) {
+                var ie = (typeof window.ActiveXObject != 'undefined');
+
+                if (ie) {
+                    xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+                    xmlDoc.async = false;
+                    while (xmlDoc.readyState != 4) { };
+                    xmlDoc.load(xmlfile);
+                    xmlloaded = true;
+                }
+                else {
+                    xmlDoc = document.implementation.createDocument("", "", null);
+                    xmlDoc.onload = readXML;
+                    xmlDoc.load(xmlfile);
+                    xmlloaded = true;
+                }
+            }
+
+            if (!xmlloaded) {
+                xmlhttp.setRequestHeader('Content-Type', 'text/xml')
+                xmlhttp.send("");
+                xmlDoc = xmlhttp.responseXML;
+                xmlloaded = true;
+            }
+            return { 'xmlDoc': xmlDoc, 'xmlLoaded': xmlloaded };
+        }
+
+        function getBestFit(els, w) {
+            for (var i = 0; i < els.length; i++) {
+                if (els[i].getAttribute('data') == w) {
+                    return w;
+                }
+            }
+            return els[0].getAttribute('data');
+        }
+
+        public static string HttpGet(string URI) 
+{
+   System.Net.WebRequest req = System.Net.WebRequest.Create(URI);
+   req.Proxy = new System.Net.WebProxy(ProxyString, true); //true means no proxy
+   System.Net.WebResponse resp = req.GetResponse();
+   System.IO.StreamReader sr = new System.IO.StreamReader(resp.GetResponseStream());
+   return sr.ReadToEnd().Trim();
+}
+
+        function checkWord(w) {
+            var doc = importXML("http://www.google.com/complete/search?output=toolbar&q=" + w);
+            if (doc.xmlLoaded) {
+                var elem = doc.xmlDoc.getElementsByTagName('suggestion');
+                if (elem.length > 0) {
+                    return getBestFit(elem, w);
+                }
+                else {
+                    return w;
+                }
+            }
+            else {
+                return "e$$";
+            }
+        }
+
+        function findMovieRating(mName) {
+            var mov = checkWord(mName.toLowerCase()), res;
+            if (mov != "e$$") {
+                res = importXML("http://mymovieapi.com/?q=" + mov + "&type=xml");
+                if (res.xmlLoaded) {
+                    var doc = res.xmlDoc;
+                    var rtd = doc.getElementsByTagName('rated').length > 0 ? doc.getElementsByTagName('rated')[0].childNodes[0].nodeValue : null;
+                    var rt = doc.getElementsByTagName('rating').length > 0 ? doc.getElementsByTagName('rating')[0].childNodes[0].nodeValue : null;
+                    if (rtd) {
+                        return rtd + ", " + rt;
+                    }
+                    else if (rt) {
+                        return "N/A, " + rt;
+                    }
+                    else {
+                        return "Movie doesn't exist.";
+                    }
+                }
+            }
+            else {
+                return "Query Failure.";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="nm" />
+    <button onclick="click()">
+        Submit</button>
+    <script>
+        alert(findMovieRating(""));
+        function click() {
+            alert(findMovieRating("Nemo"));
+        }
+    </script>
+</body>
+</html>

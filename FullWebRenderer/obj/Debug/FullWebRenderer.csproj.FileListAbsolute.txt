@@ -1,0 +1,5 @@
+E:\Visual Studio Projects\DisqueEngine\FullWebRenderer\bin\FullWebRenderer.dll
+E:\Visual Studio Projects\DisqueEngine\FullWebRenderer\bin\FullWebRenderer.pdb
+E:\Visual Studio Projects\DisqueEngine\FullWebRenderer\obj\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\FullWebRenderer\obj\Debug\FullWebRenderer.dll
+E:\Visual Studio Projects\DisqueEngine\FullWebRenderer\obj\Debug\FullWebRenderer.pdb

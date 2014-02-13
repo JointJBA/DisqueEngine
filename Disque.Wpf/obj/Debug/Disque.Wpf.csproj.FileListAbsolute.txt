@@ -1,0 +1,9 @@
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\obj\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\obj\Debug\XnaControl.baml
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\obj\Debug\XnaControl.g.cs
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\obj\Debug\Disque.Wpf_MarkupCompile.cache
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\obj\Debug\Disque.Wpf.g.resources
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\bin\Debug\Disque.Wpf.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\bin\Debug\Disque.Wpf.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\obj\Debug\Disque.Wpf.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Wpf\obj\Debug\Disque.Wpf.pdb

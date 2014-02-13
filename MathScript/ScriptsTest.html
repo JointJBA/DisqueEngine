@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="MathScripts/Math.js" type="text/javascript" language="javascript"></script>
+    <style>
+    .matrix
+    {
+        background-color: Black;
+        color: Green;
+        font-family: Consolas;
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+<div id="bod" class="matrix">
+    </div>
+<script type="text/javascript" language="javascript">
+    var body = document.getElementById("bod");
+    var content = "";
+    setInterval(function () {
+        body.innerHTML = "";
+        content = "";
+        for (var i = 0; i < 20; i++) {
+            for (var j = 0; j < 40; j++) {
+                content += randomChar();
+            }
+            content += "<br />";
+        }
+        bod.innerHTML = content;
+        if (content.match("Belal")) {
+            alert("f");
+        }
+    }, 100);
+    var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUBWXYZ";
+    function randomChar() {
+        var rnum = Math.floor(Math.random() * chars.length);
+        return chars.substring(rnum, rnum + 1);
+    }
+</script>
+</body>
+</html>

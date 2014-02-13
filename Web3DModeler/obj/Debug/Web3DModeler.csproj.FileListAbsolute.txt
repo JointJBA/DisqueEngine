@@ -1,0 +1,5 @@
+E:\Visual Studio Projects\DisqueEngine\Web3DModeler\bin\Web3DModeler.dll
+E:\Visual Studio Projects\DisqueEngine\Web3DModeler\bin\Web3DModeler.pdb
+E:\Visual Studio Projects\DisqueEngine\Web3DModeler\obj\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\Web3DModeler\obj\Debug\Web3DModeler.dll
+E:\Visual Studio Projects\DisqueEngine\Web3DModeler\obj\Debug\Web3DModeler.pdb

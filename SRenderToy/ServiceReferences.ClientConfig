@@ -1,0 +1,16 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="RenderServiceSoap" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:7071/RenderService.asmx"
+                binding="basicHttpBinding" bindingConfiguration="RenderServiceSoap"
+                contract="RenderService.RenderServiceSoap" name="RenderServiceSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>

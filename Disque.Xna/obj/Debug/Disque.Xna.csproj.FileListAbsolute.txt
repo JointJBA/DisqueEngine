@@ -1,0 +1,11 @@
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\obj\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\Disque.Xna.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\Disque.Xna.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\DisqueEngine.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\DisqueEngine.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\obj\Debug\Disque.Xna.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\obj\Debug\Disque.Xna.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\Disque.AI.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\Disque.AI.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\Disque.Math.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Xna\bin\Debug\Disque.Math.pdb

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Samples>
+  <Sample>
+    <Img>Images/Samples/34.png</Img>
+    <Code>
+      &lt;World Directory=&quot;None&quot; Tracer=&quot;Whitted&quot;&gt;
+      &lt;ViewPlane Height=&quot;200&quot; Width=&quot;800&quot; Samples=&quot;100&quot; PixelSize=&quot;1&quot; MaxDepth=&quot;5&quot; Sampler=&quot;Regular&quot;/&gt;
+      &lt;EnviromentalLight&gt;
+      &lt;AmbientOcculder Color=&quot;1,1,1&quot; Radiance=&quot;1&quot; Sampler=&quot;MultiJittered&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/EnviromentalLight&gt;
+      &lt;Camera&gt;
+      &lt;Pinhole Position=&quot;40,10,0&quot; Target=&quot;0.1,0.5,0&quot; Zoom=&quot;1.0&quot; Distance=&quot;5000&quot; ExposureTime=&quot;1&quot; RollAngle=&quot;0&quot;/&gt;
+      &lt;/Camera&gt;
+      &lt;Lights&gt;
+      &lt;PointLight Color=&quot;1,1,1&quot; Position=&quot;4,4,0&quot; Shadows=&quot;True&quot; Radiance=&quot;3&quot;/&gt;
+      &lt;/Lights&gt;
+      &lt;Objects&gt;
+      &lt;Sphere Position=&quot;0,0.5,0&quot; Radius=&quot;0.5&quot; Name=&quot;sphere1&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Reflective SpecularColor=&quot;1,0.1,0.1&quot; SpecularCoff=&quot;0.2&quot; ReflectiveColor=&quot;1,0.1,0.1&quot; ReflectiveCoff=&quot;0.8&quot; Exponent=&quot;20&quot; AmbientRelfectionCoff=&quot;0.8&quot; DiffuseRelfectionCoff=&quot;0.2&quot; Color=&quot;1,0.1,0.1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Sphere&gt;
+      &lt;Disk Center=&quot;0,0.5,-1.2&quot; Direction=&quot;1,1,0&quot; Name=&quot;Disk1&quot; Radius=&quot;0.5&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte Color=&quot;0.1,1,0.1&quot; ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Disk&gt;
+      &lt;Box Min=&quot;-0.5,0,1&quot; Max=&quot;0.5,1,2&quot; Name=&quot;Box1&quot; Shadows=&quot;False&quot;&gt;
+      &lt;Transparent SpecularColor=&quot;0.1,0.1,1&quot; SpecularCoff=&quot;0.2&quot; ReflectiveColor=&quot;0.1,0.1,1&quot; ReflectiveCoff=&quot;0.1&quot; Exponent=&quot;20&quot; AmbientRelfectionCoff=&quot;0.3&quot; DiffuseRelfectionCoff=&quot;0.3&quot; Color=&quot;0.1,0.1,1&quot; IOR=&quot;1.3&quot; TransCoff=&quot;1.0&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Box&gt;
+      &lt;Plane Position=&quot;0,0,0&quot; Direction=&quot;0,1,0&quot; Name=&quot;MainPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;/Objects&gt;
+      &lt;/World&gt;
+    </Code>
+  </Sample>
+  <Sample>
+    <Img>Images/Samples/29.png</Img>
+    <Code>
+      &lt;World Directory=&quot;None&quot; Tracer=&quot;Whitted&quot;&gt;
+      &lt;ViewPlane Height=&quot;600&quot; Width=&quot;600&quot; Samples=&quot;1&quot; PixelSize=&quot;1&quot; MaxDepth=&quot;5&quot; Sampler=&quot;Regular&quot;/&gt;
+      &lt;EnviromentalLight&gt;
+      &lt;AmbientOcculder Color=&quot;1,1,1&quot; Radiance=&quot;1&quot; Sampler=&quot;Regular&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/EnviromentalLight&gt;
+      &lt;Camera&gt;
+      &lt;Pinhole Position=&quot;40,10,20&quot; Target=&quot;0,0,0&quot; Zoom=&quot;1.1&quot; Distance=&quot;5000&quot; ExposureTime=&quot;1&quot; RollAngle=&quot;0&quot;/&gt;
+      &lt;/Camera&gt;
+      &lt;Lights&gt;
+      &lt;PointLight Color=&quot;1,1,1&quot; Position=&quot;0,4,0&quot; Shadows=&quot;True&quot; Radiance=&quot;3&quot;/&gt;
+      &lt;/Lights&gt;
+      &lt;Objects&gt;
+      &lt;Sphere Position=&quot;0.1,0.5,0&quot; Radius=&quot;0.5&quot; Name=&quot;sphere1&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte Color=&quot;1,0.1,0.1&quot; ReflectionCoff=&quot;0.8&quot; DiffuseCoff=&quot;0.8&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Sphere&gt;
+      &lt;Box Min=&quot;0.1,0,0&quot; Max=&quot;1.1,1,1&quot; Name=&quot;box2&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Transparent SpecularColor=&quot;0,1,0.1&quot; SpecularCoff=&quot;0.2&quot; ReflectiveColor=&quot;0,1,0&quot; ReflectiveCoff=&quot;0.1&quot; Exponent=&quot;20&quot; AmbientRelfectionCoff=&quot;0.3&quot; DiffuseRelfectionCoff=&quot;0.3&quot; Color=&quot;0,1,0.1&quot; IOR=&quot;1.3&quot; TransCoff=&quot;1.0&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Box&gt;
+      &lt;Plane Position=&quot;0,0,0&quot; Direction=&quot;0,1,0&quot; Name=&quot;MainPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;/Objects&gt;
+      &lt;/World&gt;
+    </Code>
+  </Sample>
+  <Sample>
+    <Img>Images/Samples/3.png</Img>
+    <Code>
+      &lt;World Directory=&quot;None&quot; Tracer=&quot;Whitted&quot;&gt;
+      &lt;ViewPlane Height=&quot;200&quot; Width=&quot;800&quot; Samples=&quot;100&quot; PixelSize=&quot;1&quot; MaxDepth=&quot;5&quot; Sampler=&quot;Regular&quot;/&gt;
+      &lt;EnviromentalLight&gt;
+      &lt;AmbientOcculder Color=&quot;1,1,1&quot; Radiance=&quot;1&quot; Sampler=&quot;MultiJittered&quot; Shadows=&quot;False&quot;/&gt;
+      &lt;/EnviromentalLight&gt;
+      &lt;Camera&gt;
+      &lt;Pinhole Position=&quot;4,1,0&quot; Target=&quot;0,0.5,0&quot; Zoom=&quot;1.0&quot; Distance=&quot;500&quot; ExposureTime=&quot;1&quot; RollAngle=&quot;0&quot;/&gt;
+      &lt;/Camera&gt;
+      &lt;Lights&gt;
+      &lt;PointLight Color=&quot;1,1,1&quot; Position=&quot;4,3,0&quot; Shadows=&quot;True&quot; Radiance=&quot;5&quot;/&gt;
+      &lt;/Lights&gt;
+      &lt;Objects&gt;
+      &lt;Sphere Position=&quot;0,0.5,0&quot; Radius=&quot;0.5&quot; Name=&quot;sphere1&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Reflective SpecularColor=&quot;1,0.1,0.1&quot; SpecularCoff=&quot;0.2&quot; ReflectiveColor=&quot;1,0.1,0.1&quot; ReflectiveCoff=&quot;0.8&quot; Exponent=&quot;20&quot; AmbientRelfectionCoff=&quot;0.8&quot; DiffuseRelfectionCoff=&quot;0.2&quot; Color=&quot;1,0.1,0.1&quot; Shadows=&quot;True&quot;/&gt;&lt;/Sphere&gt;
+      &lt;Disk Center=&quot;0,0.5,-1.2&quot; Direction=&quot;1,1,0&quot; Name=&quot;Disk1&quot; Radius=&quot;0.5&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte Color=&quot;0.1,1,0.1&quot; ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Disk&gt;
+      &lt;Box Min=&quot;-0.5,0.01,1&quot; Max=&quot;0.5,1,2&quot; Name=&quot;Box1&quot; Shadows=&quot;False&quot;&gt;
+      &lt;Transparent SpecularColor=&quot;1,1,1&quot; SpecularCoff=&quot;0&quot; ReflectiveColor=&quot;1,1,1&quot; ReflectiveCoff=&quot;0.1&quot; Exponent=&quot;2000&quot; AmbientRelfectionCoff=&quot;0&quot; DiffuseRelfectionCoff=&quot;0&quot; Color=&quot;1,1,1&quot; IOR=&quot;1.52&quot; TransCoff=&quot;1.0&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Box&gt;
+      &lt;Plane Position=&quot;0,0,0&quot; Direction=&quot;0,1,0&quot; Name=&quot;MainPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;0,4,0&quot; Direction=&quot;0,-1,0&quot; Name=&quot;UpPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;5,0,0&quot; Direction=&quot;-1,0,0&quot; Name=&quot;sidexPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;-5,0,0&quot; Direction=&quot;1,0,0&quot; Name=&quot;sidexpPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;0,0,5&quot; Direction=&quot;0,0,-1&quot; Name=&quot;sidezPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;0,0,-5&quot; Direction=&quot;0,0,1&quot; Name=&quot;sidezpPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;/Objects&gt;
+      &lt;/World&gt;
+    </Code>
+  </Sample>
+  <Sample>
+    <Img>Images/Samples/5.png</Img>
+    <Code>
+      &lt;World Directory=&quot;None&quot; Tracer=&quot;Whitted&quot;&gt;
+      &lt;ViewPlane Height=&quot;800&quot; Width=&quot;800&quot; Samples=&quot;16&quot; PixelSize=&quot;1&quot; MaxDepth=&quot;5&quot; Sampler=&quot;Regular&quot;/&gt;
+      &lt;EnviromentalLight&gt;
+      &lt;AmbientOcculder Color=&quot;1,1,1&quot; Radiance=&quot;0&quot; Shadows=&quot;False&quot; Sampler=&quot;MultiJittered&quot;/&gt;
+      &lt;/EnviromentalLight&gt;
+      &lt;Camera&gt;
+      &lt;Pinhole Position=&quot;0.61333,4,0.5&quot; Target=&quot;0.61333,0,0.5&quot; Zoom=&quot;2.6&quot; Distance=&quot;500&quot; ExposureTime=&quot;1&quot; RollAngle=&quot;0&quot;/&gt;
+      &lt;/Camera&gt;
+      &lt;Lights&gt;
+      &lt;PointLight Color=&quot;1,1,1&quot; Position=&quot;0,4,0&quot; Shadows=&quot;True&quot; Radiance=&quot;4&quot;/&gt;
+      &lt;/Lights&gt;
+      &lt;Objects&gt;
+      &lt;Sphere Position=&quot;0.14,0.5,0.5&quot; Radius=&quot;0.5&quot; Name=&quot;sphere1&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Reflective SpecularColor=&quot;1,1,1&quot; SpecularCoff=&quot;0.2&quot; ReflectiveColor=&quot;1,1,1&quot; ReflectiveCoff=&quot;0.8&quot; Exponent=&quot;2000&quot; AmbientRelfectionCoff=&quot;0.2&quot; DiffuseRelfectionCoff=&quot;0.2&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;&lt;/Sphere&gt;
+      &lt;Sphere Position=&quot;1,0.5,0&quot; Radius=&quot;0.5&quot; Name=&quot;sphere2&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Reflective SpecularColor=&quot;1,1,1&quot; SpecularCoff=&quot;0.2&quot; ReflectiveColor=&quot;1,1,1&quot; ReflectiveCoff=&quot;0.8&quot; Exponent=&quot;2000&quot; AmbientRelfectionCoff=&quot;0.2&quot; DiffuseRelfectionCoff=&quot;0.2&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;&lt;/Sphere&gt;
+      &lt;Sphere Position=&quot;1,0.5,1&quot; Radius=&quot;0.5&quot; Name=&quot;sphere3&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Reflective SpecularColor=&quot;1,1,1&quot; SpecularCoff=&quot;0.2&quot; ReflectiveColor=&quot;1,1,1&quot; ReflectiveCoff=&quot;0.8&quot; Exponent=&quot;2000&quot; AmbientRelfectionCoff=&quot;0.2&quot; DiffuseRelfectionCoff=&quot;0.2&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;&lt;/Sphere&gt;
+      &lt;Plane Position=&quot;0,0,0&quot; Direction=&quot;0,1,0&quot; Name=&quot;MainPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;0,5,0&quot; Direction=&quot;0,-1,0&quot; Name=&quot;UpPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;1&quot; DiffuseCoff=&quot;1&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;5,0,0&quot; Direction=&quot;-1,0,0&quot; Name=&quot;sidexPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;-5,0,0&quot; Direction=&quot;1,0,0&quot; Name=&quot;sidexpPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;0,0,5&quot; Direction=&quot;0,0,-1&quot; Name=&quot;sidezPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;Plane Position=&quot;0,0,-5&quot; Direction=&quot;0,0,1&quot; Name=&quot;sidezpPlane&quot; Shadows=&quot;True&quot;&gt;
+      &lt;Matte ReflectionCoff=&quot;0.5&quot; DiffuseCoff=&quot;0.5&quot; Color=&quot;1,1,1&quot; Shadows=&quot;True&quot;/&gt;
+      &lt;/Plane&gt;
+      &lt;/Objects&gt;
+      &lt;/World&gt;
+    </Code>
+  </Sample>
+</Samples>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="Asteroids/input.js"></script>
+    <script src="../Scripts/basicFigures.js"></script>
+    <script src="../Scripts/math.js"></script>
+    <script src="Asteroids/controls/lifeBar.js"></script>
+    <script src="Asteroids/background.js"></script>
+    <script src="Asteroids/host.js"></script>
+    <script src="Asteroids/controls/text.js"></script>
+    <script src="Asteroids/controls/interactive.js"></script>
+    <script src="Asteroids/controls/button.js"></script>
+    <script src="Asteroids/screens/welcomeScreen.js"></script>
+    <script src="Asteroids/sprites/planet.js"></script>
+    <script src="Asteroids/physics.js"></script>
+    <script src="Asteroids/sprites/ast.js"></script>
+    <script src="Asteroids/Sprites/projectile.js"></script>
+    <script src="Asteroids/screens/instructions.js"></script>
+    <script src="Asteroids/screens/gameScreen.js"></script>
+    <script src="Asteroids/screens/storyScreen.js"></script>
+    <script src="Asteroids/gameLoop.js"></script>
+    <script>
+        function preDefine() {
+            //            window.onresize = function () {
+            //                WIDTH = window.innerWidth;
+            //                HEIGHT = window.innerHeight;
+            //                main_canvas.height = HEIGHT;
+            //                main_canvas.width = WIDTH;
+            //                back.start();
+            //            }
+        }
+    </script>
+    <style>
+        #container
+        {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" onmousemove="upPos(event)" onmousedown="downState(event)" onmouseup="upState(event)">
+        <canvas id="main_canvas"></canvas>
+    </div>
+    <div id="tester" style="position: absolute; top: -129370123px; left: -9182379812px;
+        height: auto; width: auto;">
+    </div>
+    <script>
+        input();
+        FONT = "Impact";
+        TESTER = tester;
+        WIDTH = window.innerWidth;
+        HEIGHT = window.innerHeight;
+        main_canvas.height = HEIGHT;
+        main_canvas.width = WIDTH;
+        CTX = main_canvas.getContext('2d');
+        preDefine();
+        var MX, MY, STATE = true;
+        function upPos(e) {
+            var npos = GetLocalMousePosition("container", e.x, e.y);
+            MX = npos.x;
+            MY = npos.y;
+        }
+        function upState(e) {
+            STATE = true;
+            var npos = GetLocalMousePosition("container", e.x, e.y);
+            MX = npos.x;
+            MY = npos.y;
+        }
+        function downState(e) {
+            STATE = false;
+            var npos = GetLocalMousePosition("container", e.x, e.y);
+            MX = npos.x;
+            MY = npos.y;
+        }
+        var mainLoop = new gameLoop();
+        setInterval(function () {
+            mainLoop.update();
+            CTX.clearRect(0, 0, WIDTH, HEIGHT);
+            mainLoop.draw();
+
+        }, 1);
+    </script>
+</body>
+</html>

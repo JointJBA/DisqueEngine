@@ -1,0 +1,229 @@
+<html>
+<head>
+    <style>
+        h6
+        {
+            color: #31B404;
+            font-size: 40px;
+            font-family: Tahoma;
+            margin: 20px;
+        }
+        #mainBody
+        {
+            left: 100px;
+            position: absolute;
+        }
+        #mBox
+        {
+            text-align: center;
+            font-size: 15px;
+            font-family: Tahoma;
+            width: 300px;
+            height: 450px;
+            float: left;
+            margin-right: 100px;
+            margin-top: 25px;
+        }
+        #mBox div
+        {
+            text-align: center;
+            margin-bottom: 50px;
+            height: 200px;
+            color: #0080FF;
+        }
+    </style>
+    <title>Nutrify</title>
+    <script type="text/javascript">
+        function BMI(wt, ht) {
+            return 703 * (wt / (ht * ht));
+        }
+        function BMR(gen, age, wt, ht) {
+            if (gen == "male") {
+                return 66 + (6.23 * wt) + (12.7 * ht) - (6.8 * age);
+            } else {
+                return 655 + (4.35 * wt) + (4.7 * ht) - (4.7 * age);
+            }
+        }
+        function percent(gen, wt, wst) {
+            if (gen == "male") {
+                return (-98.42 + 4.15 * wst - 0.082 * wt) / wt;
+            } else {
+                return (-76.76 + 4.15 * wst - 0.082 * wt) / wt;
+            }
+        }
+        function leanbm(gen, wt, wst) {
+            return wt * (1 - percent(gen, wt, wst));
+        }
+        function calculate() {
+            var gen;
+            if (document.getElementById('r1').checked) {
+                gen = document.getElementById('r1').value;
+            }
+            if (document.getElementById('r2').checked) {
+                gen = document.getElementById('r2').value;
+            }
+            var ag = parseFloat(age.value);
+            var wt = parseFloat(weight.value);
+            var ht = parseFloat(height.value);
+            var wst = parseFloat(waist.value);
+            bmic.innerHTML = BMI(wt, ht).toString();
+            bmrc.innerHTML = BMR(gen, ag, wt, ht).toString();
+            prc.innerHTML = percent(gen, wt, wst).toString();
+            lbm.innerHTML = leanbm(gen, wt, wst).toString();
+        }	
+		</script>
+</head>
+<body>
+    <p>
+        <h6>
+            Nutrify</h6>
+    </p>
+    <hr>
+    <div id="mainBody">
+        <div id="mBox">
+            <div>
+                <center>
+                    <br />
+                    <b>Measurements</b></center>
+                <br />
+                <input type="radio" id="r1" name="sex" value="male"><label style="font-size: 15px">Male</label><br />
+                <input type="radio" id="r2" name="sex" value="female"><label style="font-size: 15px">Female</label><br />
+                Age:
+                <input type="text" id="age" size="10">
+                <br />
+                Weight:<input type="text" id="weight" size="10">
+                <br />
+                Height:<input type="text" id="height" size="10">
+                <br />
+                Waist:
+                <input type="text" id="waist" size="10">
+                <br />
+                <br />
+                <button onclick="calculate()">
+                    Compile!</button>
+            </div>
+            <div>
+                <center>
+                    <br />
+                    <b>Attributes</b></center>
+                <br />
+                <p id="bmic">
+                </p>
+                <p id="bmrc">
+                </p>
+                <p id="prc">
+                </p>
+                <p id="lbm">
+                </p>
+            </div>
+        </div>
+        <div id="mBox">
+            <div>
+                <center>
+                    <br />
+                    <b>Fitness Goals</b></center>
+                <br />
+                Enter your Activity Level<br />
+                <select>
+                    <option selected="selected">Sedentary (programmer)</option>
+                    <option>Light (1-3 hours a week)</option>
+                    <option>Moderate (3-5 hours a week)</option>
+                    <option>Intense (a lot of exercise)</option>
+                    <option>Go hard</option>
+                </select><br />
+                <br />
+                Enter your desired weight and
+                <br />
+                the month you want it by!<br />
+                Weight:
+                <input type="text" size="10">
+                <br />
+                Date:
+                <select>
+                    <option selected="selected">2013</option>
+                    <script>
+                        for (var i = 0; i < 100; i++) {
+                            document.write("<option>" + (2014 + i) + "</option>");
+                        }
+						</script>
+                </select>
+                <select>
+                    <option selected="selected">January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select><br />
+                <br />
+                <button>
+                    Compile!</button>
+            </div>
+            <div>
+                <br />
+                <center>
+                    <b>How you can achieve it:</b><br />
+                    <br />
+                Swag.
+            </div>
+        </div>
+        <div id="mBox">
+            <div>
+                <center>
+                    <br />
+                    <b>What will I look like?</b><br />
+                    <br />
+                    Enter your Activity level</br>
+                    <select>
+                        <option selected="selected">Sedentary (programmer)</option>
+                        <option>Light (1-3 hours a week)</option>
+                        <option>Moderate (3-5 hours a week)</option>
+                        <option>Intense (a lot of exercise)</option>
+                        <option>Go hard</option>
+                    </select><br />
+                    <br />
+                    Daily Calorie Intake:<input type="text" size="10">
+                    <br />
+                    Date:
+                    <select>
+                        <option selected="selected">2013</option>
+                        <script>
+                            for (var i = 0; i < 100; i++) {
+                                document.write("<option>" + (2014 + i) + "</option>");
+                            }
+						</script>
+                    </select>
+                    <select>
+                        <option selected="selected">January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select><br />
+                    <br />
+                    <button>
+                        Generate model!</button>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div id="mBox">
+            <br />
+            ENTER RESULTING GIF HERE PLEASE
+        </div>
+    </div>
+</body>
+</html>

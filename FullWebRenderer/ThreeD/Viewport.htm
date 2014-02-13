@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../Math.js"></script>
+</head>
+<body>
+<canvas id="port" width="800" height="800"></canvas>
+    <script language="javascript" type="text/javascript">
+        try {
+            Math.Load(function () {
+                var mworld = new world();
+                //var box = new pointBox(new vector3(0, 0, 0), new vector3(1, 1, 1), new color(0, 0, 0));
+                //var rect = new lineRectangle(new vector3(0, 0, 0), new vector3(1, 1, 0), new color(255, 0, 0));
+                //mworld.objs.add(rect);
+                var xz = new xyz();
+                mworld.objs.add(xz);
+                var s = new pointSphere(1, 0.05, new color(0, 0, 0));
+                mworld.objs.add(s);
+                var ang = 0;
+                setInterval(function () {
+                    s.transformation = matrix4.rotate(new vector3(0, 1, 0), Math.toRadians(ang++));
+                    mworld.draw();
+                }, 1);
+            }, document.getElementById("port"));
+        }
+        catch (e) {
+            alert(e);
+        }
+    </script>
+</body>
+</html>

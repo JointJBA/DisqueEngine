@@ -1,0 +1,23 @@
+﻿<Window xmlns:my1="clr-namespace:Disque.Wpf;assembly=Disque.Wpf"  x:Class="DisqueRenderToy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="470" Width="730" xmlns:my="clr-namespace:DisqueRenderToy">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="imagebox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        </ListBox>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Image x:Name="cImage" />
+            <Button Content="Render Movie" Width="80" Name="movie" Click="movie_Click" HorizontalAlignment="Left" Grid.Row="1" />
+            <TextBox Height="30" HorizontalAlignment="Left" Name="movieName" VerticalAlignment="Top" Width="174" Margin="83,0,0,0" Grid.Row="1" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="263,1,0,0" Name="num" Text="0" VerticalAlignment="Top" Width="81" FontSize="18" Grid.Row="1" />
+        </Grid>
+    </Grid>
+</Window>

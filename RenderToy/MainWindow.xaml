@@ -1,0 +1,14 @@
+﻿<Window x:Class="RenderToy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="265*" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+        <ProgressBar Grid.Row="2" Name="progress"/>
+        <TextBlock Grid.Row="1" Name="progresstext" Text="00" FontSize="20" />
+    </Grid>
+</Window>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/math.js"></script>
+    <script src="../Scripts/basicFigures.js"></script>
+    <script>
+        var NA = -100;
+        function get(walls, x, y) {
+            for (var i = 0; i < walls.length; i++) {
+                if (walls[i].spos.x == x && walls[i].spos.y == y) {
+                    return walls[i];
+                }
+            }
+            return NA;
+        }
+
+        function getNeighbors(walls, x, y, mx, my) {
+            var nbs = new Array(), n;
+            if (x > 0) {
+                n = get(walls, x - 1, y);
+                if (n != NA) {
+                    nbs.push(n);
+                }
+            }
+            if (y > 0) {
+                n = get(walls, x, y - 1);
+                if (n != NA) {
+                    nbs.push(n);
+                }
+            }
+            if (x < mx) {
+                n = get(walls, x + 1, y);
+                if (n != NA) {
+                    nbs.push(n);
+                }
+            }
+            if (y < my) {
+                n = get(walls, x, y + 1);
+                if (n != NA) {
+                    nbs.push(n);
+                }
+            }
+            return nbs;
+        }
+        function remove(walls, item) {
+             walls.splice(walls.indexOf(item), 1);
+        }
+        function makeMaze(walls, first, hd, vd) {
+            var res = new Array();
+            res.push(first);
+            var s = getNeighbors(walls, first.spos.x, first.spos.y, hd, vd);
+            res.push(s[0]);
+            res.push(s[1]);
+            remove(walls, first);
+            remove(walls, s[0]);
+            remove(walls, s[1]);
+            while (res.length > 0) {
+            var w = 
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        var hd = 400, vd = 400, sl = 8, wcolor = new color(0, 0, 0);
+        var walls = new Array();
+        can.height = vd;
+        can.width = hd;
+        var context = can.getContext('2d');
+        for (var y = 0; y < (vd / sl); y++) {
+            for (var x = 0; x < (hd / sl); x++) {
+                walls.push(new square(new vector2(x * sl, y * sl), new vector2(x, y), sl, wcolor));
+            }
+        }
+        setInterval(function () {
+            for (var i = 0; i < walls.length; i++) {
+                walls[i].draw(context);
+            }
+        }, (1000 / 60));
+        makeMaze(walls, walls[walls.length - parseInt(hd / sl)], hd / sl, vd / sl);
+        
+    </script>
+</body>
+</html>

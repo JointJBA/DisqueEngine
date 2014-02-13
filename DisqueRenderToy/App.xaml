@@ -1,0 +1,8 @@
+﻿<Application x:Class="DisqueRenderToy.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+<Application.Resources>
+        <ResourceDictionary Source="/WPF.Themes;component/WhistlerBlue/Theme.xaml"/>
+    </Application.Resources>
+</Application>

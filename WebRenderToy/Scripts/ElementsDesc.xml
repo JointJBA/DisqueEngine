@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Elements>
+  <Group Name="Core Elements">
+    <Element Name="World" Description="Core element.">
+      <Attribute Name="Tracer" Description="The type of raytracer." Type="Enum">
+        <Value Description="Handles ray casting, transparency, and relfection; Uses direct illumination.">Whitted</Value>
+      </Attribute>
+    </Element>
+    <Element Name="ViewPlane" Description="Contains the measurements, resolution, number of samples, and max depth of reflections.">
+      <Attribute Name="Width" Description="Width of the final picture." Type="Float"/>
+      <Attribute Name="Height" Description="Height of the final picture." Type="Float"/>
+      <Attribute Name="Samples" Description="Number of samples per picture." Type="Integer"/>
+      <Attribute Name="PixelSize" Description="Size of a pixel." Type="Float"/>
+      <Attribute Name="MaxDepth" Description="The maximum number of relfections between two surfaces." Type="Integer"/>
+      <Attribute Name="Sampler" Description="Type of sampler." Type="Enum">
+        <Value Description="Regular sampler">Regular</Value>
+        <Value Description="">Jittered</Value>
+        <Value Description="">MultiJittered</Value>
+        <Value Description="">NRooks</Value>
+        <Value Description="">PureRandom</Value>
+      </Attribute>
+    </Element>
+    <Element Name="EnvironmentalLight" Description="Contains the ambient light of the world.">
+      <RefEle>Lights.Ambient</RefEle>
+      <RefEle>Lights.AmbientOcculder</RefEle>
+    </Element>
+    <Element Name="Camera" Description="Contains a single camera.">
+      <RefGrp>Cameras</RefGrp>
+    </Element>
+    <Element Name="Lights" Description="Contains all of the lights in the world.">
+      <RefGrp>Lights</RefGrp>
+    </Element>
+    <Element Name="Textures" Description="Contains all textures to be used by materials.">
+      <RefGrp>Textures</RefGrp>
+    </Element>
+    <Element Name="Objects" Description="Contains all the objects to be raytraced.">
+      <RefGrp>Objects</RefGrp>
+    </Element>
+  </Group>
+  <Group Name="Cameras">
+    <Element Name="Pinhole" Description="Provides a pinhole view of the world.">
+      <Attribute Name="Position" Description="" Type="Vector"></Attribute>
+      <Attribute Name="Target" Description="" Type="Vector"></Attribute>
+      <Attribute Name="Zoom" Description="" Type="Float"></Attribute>
+      <Attribute Name="Distance" Description="" Type="Float"></Attribute>
+      <Attribute Name="ExposureTime" Description="" Type="Float"></Attribute>
+      <Attribute Name="RollAngle" Description="" Type="Float"></Attribute>
+    </Element>
+  </Group>
+  <Group Name="Lights">
+    <Element Name="Ambient" Description="">
+      <Attribute Name="Color" Description="Color of the light." Type="Vector"/>
+      <Attribute Name="Radiance" Description="Radiance of the light." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the light cause shadows?" Type="Boolean"/>
+    </Element>
+    <Element Name="AmbientOccluder" Description="">
+      <Attribute Name="Color" Description="Color of the light." Type="Vector"/>
+      <Attribute Name="Radiance" Description="Radiance of the light." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the light cause shadows?" Type="Boolean"/>
+      <Attribute Name="Sampler" Description="Type of sampler.">
+        <Value Description="Regular sampler">Regular</Value>
+        <Value Description="">Jittered</Value>
+        <Value Description="">MultiJittered</Value>
+        <Value Description="">NRooks</Value>
+        <Value Description="">PureRandom</Value>
+      </Attribute>
+    </Element>
+    <Element Name="PointLight" Description="A light source that radiates from one point in all directions.">
+      <Attribute Name="Position" Description="Position of the light." Type="Vector"/>
+      <Attribute Name="Color" Description="Color of the light." Type="Vector"/>
+      <Attribute Name="Radiance" Description="Radiance of the light." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the light cause shadows?" Type="Boolean"/>
+    </Element>
+    <Element Name="Directional" Description="A light source that radiates from one direction.">
+      <Attribute Name="Direction" Description="Direction of the light." Type="Vector"/>
+      <Attribute Name="Color" Description="Color of the light." Type="Vector"/>
+      <Attribute Name="Radiance" Description="Radiance of the light." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the light cause shadows?" Type="Boolean"/>
+    </Element>
+  </Group>
+  <Group Name="Primitive Objects">
+    <Element Name="Sphere" Description="A simple sphere.">
+      <Attribute Name="Position" Description="Position of the center of the sphere." Type="Vector"/>
+      <Attribute Name="Radius" Description="Radius of the sphere." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+    </Element>
+    <Element Name="Box" Description="A simple rectangular prism.">
+      <Attribute Name="Min" Description="Minimum point of the prism." Type="Vector"/>
+      <Attribute Name="Max" Description="Maximum point of the prism." Type="Vector"/>
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+    </Element>
+    <Element Name="Plane" Description="A simple infinite plane.">
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+    </Element>
+    <Element Name="Disk" Description="A simple flat disk.">
+      <Attribute Name="Position" Description="Center of the disk." Type="Vector"/>
+      <Attribute Name="Direction" Description="Normal of the disk." Type="Vector"/>
+      <Attribute Name="Radius" Description="Radius of the disk." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+    </Element>
+    <Element Name="Annulus" Description="A simple flat annulus.">
+      <Attribute Name="Center" Description="Center of the annulu." Type="Vector"/>
+      <Attribute Name="Direction" Description="Normal of the annulus." Type="Vector"/>
+      <Attribute Name="InnerRadius" Description="Inner radius of the annulus." Type="Float"/>
+      <Attribute Name="OuterRadius" Description="Outer radius of the annulus." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+    </Element>
+    <Element Name="Triangle" Description="A simple flat triangle.">
+      <Attribute Name="P1" Description="First point of the triangle." Type="Vector"/>
+      <Attribute Name="P2" Description="Second point of the triangle." Type="Vector"/>
+      <Attribute Name="P3" Description="Third point of the triangle." Type="Vector"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+    </Element>
+    <Element Name="OpenCylinder" Description="">
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+    </Element>
+    <Element Name="OpenCone" Description="">
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+    </Element>
+  </Group>
+  <Group Name="Compound Objects">
+    <Element Name="ThickAnnulus" Description="">
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+    </Element>
+    <Element Name="SolidCylinder" Description="">
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+    </Element>
+    <Element Name="SolidCone" Description="">
+      <Attribute Name="Shadows" Description="Does the object drop a shadow?" Type="Boolean"/>
+      <Attribute Name="Instance" Description="Will the object be used by an instance?" Type="Boolean"/>
+      <Attribute Name="Name" Description="A unique name of the object." Type="String"/>
+    </Element>
+  </Group>
+  <Group Name="Materials">
+    <Element Name="Matte" Description="The simplest material that models perfect diffuse relfection with ambient and diffuse shading.">
+      <Attribute Name="AmbientCoeff" Description="Ambient relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="DiffuseCoeff" Description="Diffuse relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="Color" Description="Color of the material." Type="Vector"/>
+      <Attribute Name="Shadows" Description="Does the material allow shadows to be dropped on it?" Type="Boolean"/>
+    </Element>
+    <Element Name="Phong" Description="">
+      <Attribute Name="AmbientCoeff" Description="Ambient relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="DiffuseCoeff" Description="Diffuse relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="SpecularCoeff" Description="Specular relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="SpecularColor" Description="Specular color of the material." Type="Vector"/>
+      <Attribute Name="Color" Description="Color of the material." Type="Vector"/>
+      <Attribute Name="Exponent" Description="Size of the specular highlights, where Exponent > 0." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the material allow shadows to be dropped on it?" Type="Boolean"/>
+    </Element>
+    <Element Name="Reflective" Description="">
+      <Attribute Name="AmbientCoeff" Description="Ambient relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="DiffuseCoeff" Description="Diffuse relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="SpecularCoeff" Description="Specular relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="SpecularColor" Description="Specular color of the material." Type="Vector"/>
+      <Attribute Name="ReflectiveCoeff" Description="Relfective coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="ReflectiveColor" Description="Reflective color of the material." Type="Vector"/>
+      <Attribute Name="Color" Description="Color of the material." Type="Vector"/>
+      <Attribute Name="Exponent" Description="Size of the specular highlights, where Exponent > 0." Type="Float"/>
+      <Attribute Name="Shadows" Description="Does the material allow shadows to be dropped on it?" Type="Boolean"/>
+    </Element>
+    <Element Name="Transparent" Description="">
+      <Attribute Name="Shadows" Description="Does the material allow shadows to be dropped on it?" Type="Boolean"/>
+    </Element>
+    <Element Name="TextureMatte" Description="">
+      <Attribute Name="AmbientCoeff" Description="Ambient relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="DiffuseCoeff" Description="Diffuse relfection coefficient, between 0 and 1." Type="Float"/>
+      <Attribute Name="Texture" Description="Name of the texture." Type="String"/>
+      <Attribute Name="Shadows" Description="Does the material allow shadows to be dropped on it?" Type="Boolean"/>
+    </Element>
+  </Group>
+  <Group Name="Textures">
+    <Element Name="ConstantColor" Description="A texture with one color.">
+      <Attribute Name="Name" Description="A unique name of the texture." Type="String"/>
+      <Attribute Name="Color" Description="Color of the texture." Type="Vector"/>
+    </Element>
+    <Element Name="ImageTexture" Description="A texture with an image.">
+      <Attribute Name="Name" Description="A unique name of the texture." Type="String"/>
+      <Attribute Name="Mapping" Description="The type of mapping when rendering the texture." Type="Enum">
+        <Value Description="(Has a bug)">Rectangular</Value>
+        <Value Description="">Hemispherical</Value>
+        <Value Description="">Spherical</Value>
+      </Attribute>
+      <Attribute Name="ImageRef" Description="The unique name of the image from the image list." Type="String"/>
+    </Element>
+  </Group>
+</Elements>

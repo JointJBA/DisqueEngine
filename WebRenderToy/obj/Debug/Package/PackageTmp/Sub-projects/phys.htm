@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/math.js"></script>
+    <script src="2dphysics/cphysics.js"></script>
+    <script src="2dphysics/body.js"></script>
+    <script src="2dphysics/shapes.js"></script>
+    <script src="2dphysics/scene.js"></script>
+    <script src="2dphysics/manifold.js"></script>
+    <script src="2dphysics/collision.js"></script>
+</head>
+<body>
+<canvas id="can" height="400" width="400"></canvas>
+<script>
+    var ctx = can.getContext('2d');
+    var s = new scene(1.0 / 30.0, 10);
+    var c = new circle(5.0);
+    var g = new circle(5.0);
+    var gg = new polygon();
+    gg.setBox(20, 5);
+    gg.setOrient(0);
+    var b = s.add(c, 200, 200), f = s.add(g, 202, 180), n = s.add(gg, 200, 230);
+    n.setStatic();
+    b.setStatic();
+    setInterval(function () {
+        ctx.clearRect(0, 0, 400, 400);
+        s.step();
+        for (var i = 0; i < s.bodies.length; i++) {
+            testDraw(ctx, s.bodies[i]);
+        }
+        for (var i = 0; i < s.contacts.length; i++) {
+            for (var j = 0; j < s.contacts[i].contacts.length; j++) {
+                drawContact(ctx, s.contacts[i].contacts[j]);
+            }
+        }
+    }, (1000.0 / 30.0));
+</script>
+</body>
+</html>

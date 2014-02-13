@@ -1,0 +1,21 @@
+﻿<Window x:Class="DisqueRenderToy.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditWindow" Height="300" Width="300" xmlns:my="clr-namespace:DisqueRenderToy">
+    <Grid>
+        <Grid x:Name="image">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <my:Screen x:Name="pscreen"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                
+            </Grid>
+        </Grid>
+        <Grid x:Name="animation" Visibility="Collapsed">
+        </Grid>
+    </Grid>
+</Window>

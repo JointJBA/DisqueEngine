@@ -1,0 +1,47 @@
+﻿Build started 3/2/2013 8:26:42 PM.
+     1>Project "E:\Visual Studio Projects\DisqueEngine\DisqueRay\DisqueRay.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\DisqueRay.unsuccessfulbuild".
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\DisqueRay.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Test.cpp /clr:nostdlib 
+         Test.cpp
+     1>e:\visual studio projects\disqueengine\disqueray\vec2.h(54): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec2.h(59): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec2.h(64): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec2.h(69): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec2.h(74): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec3.h(66): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec3.h(71): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec3.h(76): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec3.h(81): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec3.h(86): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\vec3.h(96): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\matrix4.h(65): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\matrix4.h(74): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\matrix4.h(131): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\matrix4.h(139): warning C4172: returning address of local variable or temporary
+     1>e:\visual studio projects\disqueengine\disqueray\matrix4.h(148): warning C4172: returning address of local variable or temporary
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Visual Studio Projects\DisqueEngine\Debug\DisqueRay.dll" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\DisqueRay.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Visual Studio Projects\DisqueEngine\Debug\DisqueRay.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\app.res
+         Debug\all.obj
+         Debug\AssemblyInfo.obj
+         Debug\Stdafx.obj
+         Debug\Test.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         DisqueRay.vcxproj -> E:\Visual Studio Projects\DisqueEngine\Debug\DisqueRay.dll
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\Visual Studio Projects\DisqueEngine\Debug\DisqueRay.dll;#2" /manifest Debug\DisqueRay.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\DisqueRay.unsuccessfulbuild".
+         Touching "Debug\DisqueRay.lastbuildstate".
+     1>Done Building Project "E:\Visual Studio Projects\DisqueEngine\DisqueRay\DisqueRay.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.01

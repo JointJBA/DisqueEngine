@@ -1,0 +1,28 @@
+﻿<Window x:Class="DisqueRenderToy.NewLightWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewLightWindow" Height="200" Width="300" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize" ShowInTaskbar="False" Margin="0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="new_camera_grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Camera Type:" Height="20" FontSize="15"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <ComboBox Height="20">
+                    <ComboBoxItem Content="Pinhole"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="new_light_grid" Visibility="Collapsed"/>
+        <Button Grid.Row="1" Content="Cancel" Margin="228,0,0,0" Name="cancelbutton" Click="cancelbutton_Click" />
+        <Button Content="Ok" Margin="163,0,65,0" Grid.Row="1" Name="okbutton" Click="okbutton_Click" />
+    </Grid>
+</Window>

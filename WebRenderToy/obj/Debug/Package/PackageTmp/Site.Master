@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebRenderToy.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Belal Said</title>
+    <link rel="stylesheet" type="text/css" href="Styles/Site.css" />
+    <meta name="description" content="Online C# Raytracer" />
+    <meta name="keywords" content="C#,.net,C#.net,cs,cs.net,raytracer,C# raytracer,3d,graphics,realistic,path tracing" />
+    <meta name="author" content="Belal Said" />
+    <script language="javascript" type="text/javascript">
+        function removeChild() {
+        }
+    </script>
+    <script type="text/javascript" src="Scripts/Silverlight.js"></script>
+    <link rel="stylesheet" href="Scripts/lib/codemirror.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="Scripts/lib/codemirror.js" type="text/javascript"></script>
+    <script src="Scripts/lib/util/closetag.js"></script>
+    <script src="Scripts/lib/util/simple-hint.js" type="text/javascript"></script>
+    <link type="stylesheet" href="Scripts/lib/util/simple-hint.css" />
+    <script src="Scripts/lib/util/xml-hint.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://methvin.com/splitter/splitter.js"></script>
+    <script src="Scripts/xml.js" type="text/javascript"></script>
+    <style type="text/css">
+        .CodeMirror
+        {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="../../doc/docs.css" />
+</head>
+<body onload="removeChild()" id="body">
+    <form id="form1" runat="server">
+    <div class="menubar">
+        <ul class="menu">
+            <li><a href="Default.aspx">Home</a></li>
+            <li><a href="Ray.aspx">C# Raytracer</a> </li>
+            <li><a href="Titan.aspx">Titan Taxi</a></li>
+            <li><a href="projects.aspx">Other Projects</a></li>
+        </ul>
+    </div>
+    <div id="host">
+        <asp:ContentPlaceHolder ID="BodyPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="hanger">
+    </div>
+    </form>
+</body>
+</html>

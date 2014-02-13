@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Images>
+  <Image id="ship" url="images/ships/ship.png"></Image>
+  <Image id="asteroid" url="images/blocks/block.png"></Image>
+  <Image id="arrow" url="images/misc/arrow.png"></Image>
+  <Image id="gear" url="images/misc/gear.png"></Image>
+  <Image id="blackhole" url="images/misc/bh.png"></Image>
+  <Image id="station" url="images/misc/door.png"></Image>
+  <Image id="base" url="images/misc/station.png"></Image>
+  <Image id="explosion" url="images/effects/explosion.png"></Image>
+  <Image id="wait" url="images/effects/cloud.png"></Image>
+  <Image id="customer" url="images/effects/walkingman.png"></Image>
+  <Image id="logo" url="images/tlogo.png"></Image>
+  <Image id="background" url="images/back.png"></Image>
+</Images>

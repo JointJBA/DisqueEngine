@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="../../Scripts/math.js"></script>
+    <script src="../../Scripts/basicFigures.js"></script>
+    <script src="../2dphysics/shapes.js"></script>
+    <script src="../2dphysics/manifold.js"></script>
+    <script src="../2dphysics/collision.js"></script>
+    <script src="../2dphysics/scene.js"></script>
+    <script src="../2dphysics/body.js"></script>
+    <script src="../2dphysics/cphysics.js"></script>
+    <script src="scripts/misc/xml.js"></script>
+    <script src="scripts/misc/input.js"></script>
+    <script src="scripts/misc/control.js"></script>
+    <script src="scripts/loaders/imageLoader.js"></script>
+    <script src="scripts/loaders/levelLoader.js"></script>
+    <script src="scripts/host.js"></script>
+    <script src="scripts/screens/loading.js"></script>
+    <script src="scripts/screens/home.js"></script>
+    <script src="scripts/screens/levelScreen.js"></script>
+    <script src="scripts/screens/settingsScreen.js"></script>
+    <script src="scripts/screens/helpScreen.js"></script>
+    <script src="scripts/screens/level.js"></script>
+    <script src="scripts/controls/interactive.js"></script>
+    <script src="scripts/controls/button.js"></script>
+    <script src="scripts/controls/text.js"></script>
+    <script src="scripts/controls/score.js"></script>
+    <script src="scripts/controls/progressBar.js"></script>
+    <script src="scripts/controls/lifeBar.js"></script>
+    <script src="scripts/sprites/ship.js"></script>
+    <script src="scripts/sprites/jet.js"></script>
+    <script src="scripts/gameLoop.js"></script>
+    <style>
+        #container
+        {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="container" onmousemove="upPos(event)" onmousedown="downState(event)" onmouseup="upState(event)">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="tester" style="position: absolute; top: -129370123px; left: -9182379812px height: auto; width: auto;">
+        </div>
+    </center>
+    <script>
+        var width = 640, height = 480;
+        ctx = canvas.getContext('2d');
+        canvas.height = height;
+        canvas.width = width;
+        var MX, MY, STATE = true;
+        TESTER = tester;
+        function upPos(e) {
+            var npos = GetLocalMousePosition("container", e.x, e.y);
+            MX = npos.x;
+            MY = npos.y;
+        }
+        function upState(e) {
+            STATE = true;
+            var npos = GetLocalMousePosition("container", e.x, e.y);
+            MX = npos.x;
+            MY = npos.y;
+        }
+        function downState(e) {
+            STATE = false;
+            var npos = GetLocalMousePosition("container", e.x, e.y);
+            MX = npos.x;
+            MY = npos.y;
+        }
+        startGame();
+    </script>
+</body>
+</html>

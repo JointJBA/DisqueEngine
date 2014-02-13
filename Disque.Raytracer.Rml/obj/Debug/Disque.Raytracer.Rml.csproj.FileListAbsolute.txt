@@ -1,0 +1,9 @@
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\bin\Debug\Disque.Raytracer.Rml.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\bin\Debug\Disque.Raytracer.Rml.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\bin\Debug\Disque.Raytracer.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\bin\Debug\MathLibrary.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\bin\Debug\MathLibrary.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\bin\Debug\Disque.Raytracer.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\obj\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\obj\Debug\Disque.Raytracer.Rml.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.Raytracer.Rml\obj\Debug\Disque.Raytracer.Rml.pdb

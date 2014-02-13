@@ -1,0 +1,11 @@
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\TesterConsole.exe
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\TesterConsole.pdb
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\Disque.Raytracer.Rml.dll
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\Disque.Raytracer.dll
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\MathLibrary.dll
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\Disque.Raytracer.Rml.pdb
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\Disque.Raytracer.pdb
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\bin\Debug\MathLibrary.pdb
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\obj\x86\Debug\TesterConsole.exe
+E:\Visual Studio Projects\DisqueEngine\TesterConsole\obj\x86\Debug\TesterConsole.pdb

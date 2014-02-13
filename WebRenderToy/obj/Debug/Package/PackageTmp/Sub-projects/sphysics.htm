@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/math.js"></script>
+    <script src="../Scripts/basicFigures.js"></script>
+</head>
+<body>
+<canvas id="can"></canvas>
+    <script>
+        var nil = -91271270;
+        var ctx = can.getContext('2d');
+        var dim = 400;
+        can.width = can.height = dim;
+        WORLD = new Array();
+        collisions = new Array();
+        function collision(aa, bb, cnorm, idep) {
+            this.a = aa;
+            this.b = bb;
+            this.collisionNormal = cnorm;
+            this.intersectionDepth = idep;
+        }
+        function findCollisions() {
+            var d, a;
+            for (var i = 0; i < WORLD.length; i++) {
+                a = WORLD[i];
+                if ((a.position.x - a.circle.radius) < 0) {
+                    collisions.push(new collision(a, nil, new vector2(1, 0), -(a.position.x - a.circle.radius) * 2.0));
+                }
+                else if ((a.position.x + a.circle.radius) > dim) {
+                    collisions.push(new collision(a, nil, new vector2(-1, 0), ((a.position.x + a.circle.radius) - dim) * 2.0));
+                }
+                if ((a.position.y - a.circle.radius) < 0) {
+                    collisions.push(new collision(a, nil, new vector2(0, 1), -(a.position.y - a.circle.radius) * 2.0));
+                }
+                else if ((a.position.y + a.circle.radius) > dim) {
+                    collisions.push(new collision(a, nil, new vector2(0, -1), ((a.position.y + a.circle.radius) - dim) * 2.0));
+                }
+                for (var j = i + 1; j < WORLD.length; j++) {
+                    d = distance(WORLD[i].position, WORLD[j].position);
+                    if (d < (WORLD[i].circle.radius + WORLD[j].circle.radius)) {
+                        collisions.push(new collision(WORLD[i], WORLD[j], WORLD[i].position.clone().subt(WORLD[j].position).normalize(), (WORLD[i].circle.radius + WORLD[j].circle.radius) - d));
+                    }
+                }
+            }
+        }
+        function resolveCollisions() {
+            var c;
+            for (var i = 0; i < collisions.length; i++) {
+                c = collisions[i];
+                c.a.position.add(c.collisionNormal.clone().scale(0.5 * c.intersectionDepth));
+                c.a.velocity = reflect(c.a.velocity, c.collisionNormal);
+                if (c.b != nil) {
+                    c.b.position.add(c.collisionNormal.clone().scale(-0.5 * c.intersectionDepth));
+                    c.b.velocity = reflect(c.b.velocity, c.collisionNormal.scale(-1.0));
+                }
+            }
+            collisions.splice(0, collisions.length);
+        }
+        function ball(pos, vel, acc, rad, col) {
+            this.position = pos;
+            this.velocity = vel;
+            this.acceleration = acc;
+            this.circle = new circle(pos, rad, col);
+            this.update = function () {
+                this.position.add(this.velocity);
+                this.velocity.add(this.acceleration);
+            }
+            this.draw = function (ctx) {
+                this.circle.position = this.position;
+                this.circle.draw(ctx)
+            }
+        }
+        function All() {
+            for (var i = 0; i < WORLD.length; i++) {
+                WORLD[i].draw(ctx);
+                WORLD[i].update();
+            }
+        }
+        var n = random(5, 50);
+        for (var i = 0; i < n; i++) {
+            WORLD.push(new ball(new vector2(random(0, dim), random(0, dim)), new vector2(random(1, 5), random(-5, 5)), new vector2(0, 0), random(10, 15), new color(random(0, 255), random(0, 255), random(0, 255))));
+        }
+        setInterval(function () {
+            ctx.clearRect(0, 0, dim, dim);
+            findCollisions();
+            resolveCollisions();
+            All();
+        }, (1000 / 60));
+    </script>
+</body>
+</html>

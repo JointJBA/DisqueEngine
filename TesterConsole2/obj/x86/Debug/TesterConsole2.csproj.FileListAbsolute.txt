@@ -1,0 +1,7 @@
+E:\Visual Studio Projects\DisqueEngine\TesterConsole2\bin\Debug\TesterConsole2.exe
+E:\Visual Studio Projects\DisqueEngine\TesterConsole2\bin\Debug\TesterConsole2.pdb
+E:\Visual Studio Projects\DisqueEngine\TesterConsole2\bin\Debug\DisqueRay.dll
+E:\Visual Studio Projects\DisqueEngine\TesterConsole2\bin\Debug\DisqueRay.pdb
+E:\Visual Studio Projects\DisqueEngine\TesterConsole2\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\TesterConsole2\obj\x86\Debug\TesterConsole2.exe
+E:\Visual Studio Projects\DisqueEngine\TesterConsole2\obj\x86\Debug\TesterConsole2.pdb

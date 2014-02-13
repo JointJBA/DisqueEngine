@@ -1,0 +1,11 @@
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\Disque.MovieMaker.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\Disque.MovieMaker.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\obj\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\obj\Debug\Disque.MovieMaker.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\obj\Debug\Disque.MovieMaker.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\Disque.Raytracer.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\Disque.Raytracer.Rml.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\Disque.Raytracer.Rml.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\Disque.Raytracer.pdb
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\MathLibrary.dll
+E:\Visual Studio Projects\DisqueEngine\Disque.MovieMaker\bin\Debug\MathLibrary.pdb

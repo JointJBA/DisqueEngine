@@ -1,0 +1,133 @@
+﻿<Window xmlns:my1="clr-namespace:Disque.Wpf;assembly=Disque.Wpf"  x:Class="DisqueRenderToy.RenderToy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avalonEdit="clr-namespace:ICSharpCode.AvalonEdit;assembly=ICSharpCode.AvalonEdit"
+        xmlns:my="clr-namespace:DisqueRenderToy"
+        Title="RenderToy" Height="500" Width="500">
+    <Window.CommandBindings>
+        <CommandBinding Command="Close" x:Name="Close" Executed="Close_Executed"/>
+        <CommandBinding Command="New" x:Name="New" Executed="New_Executed"/>
+        <CommandBinding Command="Save" x:Name="Save" Executed="Save_Executed"/>
+        <CommandBinding Command="SaveAs" x:Name="SaveAs" Executed="SaveAs_Executed"/>
+        <CommandBinding Command="Open" x:Name="Open" Executed="Open_Executed"/>
+   </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Command="New"/>
+                <MenuItem Header="_Open..." Command="Open"/>
+                <Separator />
+                <MenuItem Header="_Save" Command="Save"/>
+                <MenuItem Header="Save _As..." Command="SaveAs"/>
+                <Separator />
+                <MenuItem Header="E_xit" Command="Close"/>
+            </MenuItem>
+            <MenuItem Header="Edit"/>
+            <MenuItem Header="View"/>
+            <MenuItem Header="Add">
+                <MenuItem Header="Sphere" />
+                <MenuItem Header="Cube" />
+                <MenuItem Header="Cylinder" />
+                <MenuItem Header="Triangle" />
+                <MenuItem Header="Plane" />
+                <MenuItem Header="Mesh" />
+                <MenuItem Header="Camera" />
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.RowSpan="2" />
+            <GridSplitter Width="5" Grid.RowSpan="2" />
+            <Grid Grid.Column="1" Grid.RowSpan="2">
+                <Grid>
+                 <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                    <Grid>
+                        <my1:XnaControl x:Name="screen" Margin="0,0,0,5" Grid.ColumnSpan="3" GotFocus="screen_GotFocus" LostFocus="screen_LostFocus"/>
+                    </Grid>
+                    <GridSplitter Height="5" VerticalAlignment="Bottom" Width="Auto" HorizontalAlignment="Stretch" ResizeDirection="Rows"/>
+                            <Grid Grid.Row="1">
+                                <avalonEdit:TextEditor Name="textEditor" FontFamily="Consolas" FontSize="10pt" SyntaxHighlighting="XML" ShowLineNumbers="True" Text="&lt;Root&gt;&lt;/Root&gt;" WordWrap="True"/>
+                            </Grid>
+                        </Grid>
+            </Grid>
+            <GridSplitter Width="5" Grid.Column="2" HorizontalAlignment="Left" Grid.RowSpan="2" />
+            <Grid Grid.Column="2" Grid.RowSpan="2" Margin="5,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                <StackPanel Orientation="Vertical">
+                    <Expander Header="General Properties">
+                    </Expander>
+                        <Expander Header="Lights">
+                            <Grid Height="120">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="20" />
+                                </Grid.RowDefinitions>
+                                <ListBox x:Name="lights_listbox">
+                                
+                            </ListBox>
+                                <Button Content="Add" x:Name="add_light_button" Grid.Row="1" Width="50" HorizontalAlignment="Right" Click="add_light_button_Click"/>
+                            </Grid>
+                        </Expander>
+                        <Expander Header="Cameras">
+                            <Grid Height="120">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="20" />
+                                </Grid.RowDefinitions>
+                                <ListBox x:Name="cameras_listbox">
+
+                                </ListBox>
+                                <Button Content="Add" x:Name="add_camera_button" Grid.Row="1" Width="50" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Expander>
+                            <Expander Header="Render">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Image" Width="100" Name="image_render_button" Click="image_render_button_Click" />
+                                <Button Content="Animation" Width="100" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="Rendering Options">
+                        <StackPanel Orientation="Vertical">
+                            <CheckBox/>
+                            <CheckBox/>
+                            <CheckBox/>
+                            <CheckBox/>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+                </Grid>
+                <GridSplitter Height="5" VerticalAlignment="Bottom" Width="Auto" HorizontalAlignment="Stretch" ResizeDirection="Rows"/>
+                <Grid Grid.Row="1">
+                    <Expander Header="Properties">
+                        
+                    </Expander>
+                </Grid>
+            </Grid>
+        </Grid>
+        <StatusBar Grid.Row="2">
+            <TextBlock Text="" x:Name="status"/>
+            <Separator/>
+            <TextBlock x:Name="fps"/>
+            <Separator Visibility="{Binding ElementName=renderingbar, Path=Visibility}"/>
+            <ProgressBar Width="100" Height="18" IsIndeterminate="True" x:Name="renderingbar" Visibility="Collapsed"/>
+        </StatusBar>
+    </Grid>
+</Window>

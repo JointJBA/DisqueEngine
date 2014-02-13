@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="../../Scripts/math.js"></script>
+</head>
+<body>
+    <center>
+        <div id="container" >
+            <canvas id="canvas" onmouseup="upState(event)"></canvas>
+        </div>
+        <div id="points">
+        </div>
+    </center>
+    <script>
+        var width = 640, height = 480;
+        ctx = canvas.getContext('2d');
+        canvas.height = height;
+        canvas.width = width;
+        var MX, MY, STATE = true;
+        function poly() {
+            this.vertices = new Array();
+            this.draw = function () {
+                if (this.vertices.length > 0) {
+                    ctx.save();
+                    ctx.beginPath();
+                    var be = this.vertices[0];
+                    ctx.moveTo(be.x, be.y);
+                    for (var i = 1; i < this.vertices.length; i++) {
+                        be = this.vertices[i];
+                        ctx.lineTo(be.x, be.y);
+                    }
+                    ctx.strokeStyle = new color(255, 255, 255).getStyle();
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }
+        var p = new poly();
+        function upState(e) {
+            STATE = true;
+            var npos = GetLocalMousePosition("canvas", e.x, e.y);
+            MX = npos.x;
+            MY = npos.y;
+            p.vertices.push(new vector2(MX, MY));
+            points.innerHTML += "&lt;vertex x=&quot;" + MX + "&quot; y=&quot;" + MY + "&quot;/&gt;";
+            console.log(p.vertices.length);
+            var xx = 0, yy = 0;
+            for (var i = 0; i < p.vertices.length; i++) {
+                xx += p.vertices[i].x;
+                yy += p.vertices[i].y;
+            }
+            xx /= p.vertices.length;
+            yy /= p.vertices.length;
+            console.log("center: (" + xx + ", " + yy + ")");
+        }
+        var imageObj = new Image();
+
+        imageObj.onload = function () {
+        };
+        imageObj.src = 'levels/level1.png';
+
+        setInterval(function () {
+            ctx.clearRect(0, 0, width, height);
+            ctx.drawImage(imageObj, 0, 0);
+            p.draw();
+        }, 1);
+
+    </script>
+</body>
+</html>

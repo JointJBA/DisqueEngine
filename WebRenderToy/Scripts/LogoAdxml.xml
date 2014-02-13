@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>Images/logo.png</ImageUrl>
+    <NavigateUrl>Default.aspx</NavigateUrl>
+    <AlternateText>raytracer</AlternateText>
+    <Impressions>1</Impressions>
+    <Keyword>raytracer</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>Images/logo2.png</ImageUrl>
+    <NavigateUrl>Default.aspx</NavigateUrl>
+    <AlternateText>Support for IT Professionals</AlternateText>
+    <Impressions>1</Impressions>
+    <Keyword>raytracer</Keyword>
+  </Ad>
+</Advertisements>

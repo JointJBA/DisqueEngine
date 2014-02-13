@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02D5AE29-1CBD-48EC-8FED-D4CA255C881E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Disque.Raytracer</RootNamespace>
+    <AssemblyName>Disque.Raytracer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accelerators\Aggregate.cs" />
+    <Compile Include="Core\Intersection.cs" />
+    <Compile Include="Core\Primitive.cs" />
+    <Compile Include="Math\BBox.cs" />
+    <Compile Include="Cameras\Camera.cs" />
+    <Compile Include="Core\Scene.cs" />
+    <Compile Include="DifferentialGeometry.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Film\Film.cs" />
+    <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Integrators\SurfaceIntegrator.cs" />
+    <Compile Include="Integrators\VolumeIntegrator.cs" />
+    <Compile Include="Lights\Light.cs" />
+    <Compile Include="Materials\Material.cs" />
+    <Compile Include="MathHelper.cs" />
+    <Compile Include="Math\Normal.cs" />
+    <Compile Include="Math\Point.cs" />
+    <Compile Include="Math\Quaternion.cs" />
+    <Compile Include="Math\Ray.cs" />
+    <Compile Include="Math\RayDifferential.cs" />
+    <Compile Include="Math\Vector.cs" />
+    <Compile Include="Math\Matrix4x4.cs" />
+    <Compile Include="Memory.cs" />
+    <Compile Include="Pointer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\Renderer.cs" />
+    <Compile Include="Rml\Element.cs" />
+    <Compile Include="Rml\Parameter.cs" />
+    <Compile Include="Rml\RmlReader.cs" />
+    <Compile Include="Rml\RmlWritter.cs" />
+    <Compile Include="Sampler\Sampler.cs" />
+    <Compile Include="Shapes\Cone.cs" />
+    <Compile Include="Shapes\Cylinder.cs" />
+    <Compile Include="Shapes\Disk.cs" />
+    <Compile Include="Shapes\HeightField.cs" />
+    <Compile Include="Shapes\Hyperboloid.cs" />
+    <Compile Include="Shapes\LoopSubDiv.cs" />
+    <Compile Include="Shapes\Paraboloid.cs" />
+    <Compile Include="Shapes\Shape.cs" />
+    <Compile Include="Shapes\Sphere.cs" />
+    <Compile Include="Shapes\Triangle.cs" />
+    <Compile Include="Shapes\TriangleMesh.cs" />
+    <Compile Include="Textures\Texture.cs" />
+    <Compile Include="Math\Transforms.cs" />
+    <Compile Include="Volumes\VolumeRegion.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
